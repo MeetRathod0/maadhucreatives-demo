@@ -32,6 +32,19 @@
       .font-bebas {
         font-family: "Bebas Neue", sans-serif;
       }
+      .tab-btn {
+        padding: 0.5rem 1.5rem;
+        border-radius: 9999px;
+        background: #e5e7eb;
+        color: #000;
+        font-weight: 500;
+        white-space: nowrap;
+        cursor: pointer;
+      }
+      .tab-btn.active {
+        background: #000;
+        color: #fff;
+      }
     </style>
   </head>
   <body>
@@ -58,7 +71,7 @@
         >
           <div class="grid grid-cols-5 h-full">
             <div
-              class="col-span-2 h-screen flex flex-col gap-5 justify-center pl-[16%] pt-[20%] pb-[4%] text-3xl font-bold"
+              class="col-span-5 md:col-span-2 h-screen flex flex-col gap-5 justify-center pl-[6%] md:pl-[16%] pt-[20%] pb-[4%] text-3xl font-bold"
             >
               <a
                 href="#"
@@ -182,15 +195,19 @@
                 </svg>
               </div>
             </div>
-            <div class="col-span-3 h-screen relative p-5">
+            <div class="col-span-3 h-screen relative p-5 hidden md:flex">
               <img
                 id="menu-preview"
                 src="./assets/Scale-Model-Making-Company.webp"
                 alt="3d visualization"
                 class="w-full h-full object-cover rounded-2xl border border-white"
               />
+            </div>
+            <div
+              class="absolute top-5 right-5 cursor-pointer p-2 bg-white rounded-full"
+            >
               <svg
-                class="w-8 h-8 text-gray-800 dark:text-white absolute top-10 right-36 cursor-pointer"
+                class="h-6 md:w-8 h-6 md:h-8 text-gray-800 dark:text-black"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -215,7 +232,7 @@
     <main>
       <div class="container px-4">
         <div class="grid grid-cols-12 py-10 gap-6">
-          <div class="col-span-5 flex flex-col overflow-hidden">
+          <div class="col-span-12 md:col-span-5 flex flex-col overflow-hidden">
             <h1 class="font-bebas text-8xl">
               We Build Ideas You Can See and Touch
             </h1>
@@ -230,7 +247,7 @@
                 READ MORE
               </button>
             </div>
-            <div class="grid grid-cols-3 pt-4 gap-4 pb-2">
+            <div class="grid grid-cols-2 md:grid-cols-3 pt-4 gap-4 pb-2">
               <!-- <div class="flex items-center gap-1">
                 <span class="text-3xl font-semibold">500+</span>
                 <p class="text-xs">families found a home</p>
@@ -252,11 +269,11 @@
               />
             </div>
           </div>
-          <div class="col-span-7 relative">
+          <div class="col-span-12 md:col-span-7 relative">
             <div class="relative overflow-hidden rounded-2xl">
               <div
                 id="carousel"
-                class="flex w-full h-[calc(100vh-60px)] transition-transform duration-500 ease-in-out"
+                class="flex w-full h-[calc(60vh-60px)] md:h-[calc(100vh-60px)] transition-transform duration-500 ease-in-out"
               >
                 <img
                   src="./assets/services/Architectural Model Maker.jpg"
@@ -281,7 +298,7 @@
               </div>
 
               <div
-                class="absolute flex flex-row gap-4 items-center bottom-0 left-0 right-0 bg-linear-to-t from-black/90 to-transparent px-6 py-3"
+                class="absolute flex flex-col md:flex-row gap-4 items-start md:items-center bottom-0 left-0 right-0 bg-linear-to-t from-black/90 to-transparent px-6 py-3"
               >
                 <p
                   id="carouselText"
@@ -314,8 +331,10 @@
             </div>
           </div>
         </div>
-        <div class="grid grid-cols-12 pt-28 pb-16 gap-8 items-center">
-          <div class="col-span-7 flex flex-col gap-6">
+        <div
+          class="grid grid-cols-12 pt-20 md:pt-28 pb-12 md:pb-16 gap-8 items-center"
+        >
+          <div class="col-span-12 md:col-span-7 flex flex-col gap-6">
             <h2 class="font-bebas text-6xl">
               Trusted & Global Leading Architectural Miniature Model Making
               Company
@@ -335,7 +354,7 @@
               READ MORE
             </button>
           </div>
-          <div class="col-span-5">
+          <div class="col-span-12 md:col-span-5">
             <div
               class="relative w-full rounded-2xl overflow-hidden aspect-video bg-black"
             >
@@ -358,7 +377,7 @@
           </div>
         </div>
       </div>
-      <div class="container px-4 py-16">
+      <div class="container px-4 py-12 md:py-16">
         <div class="flex flex-col items-center text-center mb-16">
           <h2 class="font-bebas text-6xl mb-4">Maadhu Creatives Advantage</h2>
           <p class="text-gray-700 text-lg max-w-4xl">
@@ -369,7 +388,7 @@
           </p>
         </div>
 
-        <div class="grid grid-cols-5 gap-8">
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
           <div class="flex flex-col items-center gap-4">
             <svg
               class="w-12 h-12 text-black"
@@ -436,6 +455,445 @@
           </div>
         </div>
       </div>
+      <div class="container px-4 py-16">
+        <h2 class="font-bebas text-6xl mb-8">Our Services</h2>
+
+        <!-- Service Tabs -->
+        <div class="flex flex-wrap gap-3 mb-12 pb-4">
+          <button class="tab-btn active" data-filter="scale-models">
+            Scale Models
+          </button>
+          <button class="tab-btn" data-filter="3d-visualization">
+            3D Visualization
+          </button>
+          <button class="tab-btn" data-filter="3d-printing">3D Printing</button>
+          <button class="tab-btn" data-filter="architectural">
+            Architectural Exterior Model
+          </button>
+          <button class="tab-btn" data-filter="interior">
+            Architectural Interior Model
+          </button>
+          <button class="tab-btn" data-filter="marine">Marine Model</button>
+          <button class="tab-btn" data-filter="industrial">
+            Industrial Model
+          </button>
+          <button class="tab-btn" data-filter="piping">Piping Model</button>
+          <button class="tab-btn" data-filter="engineering">
+            Engineering Model
+          </button>
+          <button class="tab-btn" data-filter="master-plan">Master Plan</button>
+        </div>
+
+        <!-- Service Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            class="service-card rounded-2xl overflow-hidden group cursor-pointer"
+            data-category="architectural"
+          >
+            <img
+              src="./assets/hero-section-left-side.jpg"
+              alt="Service"
+              class="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
+            />
+            <div class="p-4 border border-gray-200">
+              <h3 class="font-semibold text-lg">Jack Company</h3>
+            </div>
+          </div>
+          <div
+            class="service-card rounded-2xl overflow-hidden group cursor-pointer"
+            data-category="architectural"
+          >
+            <img
+              src="./assets/services/3D Visualization.jpg"
+              alt="Service"
+              class="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
+            />
+            <div class="p-4 bg-white border border-gray-200">
+              <h3 class="font-semibold text-lg">L&T</h3>
+            </div>
+          </div>
+          <div
+            class="service-card rounded-2xl overflow-hidden group cursor-pointer"
+            data-category="architectural"
+          >
+            <img
+              src="./assets/services/3D Printing.jpg"
+              alt="Service"
+              class="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
+            />
+            <div class="p-4 bg-white border border-gray-200">
+              <h3 class="font-semibold text-lg">Tata</h3>
+            </div>
+          </div>
+          <div
+            class="service-card rounded-2xl overflow-hidden group cursor-pointer"
+            data-category="architectural"
+          >
+            <img
+              src="./assets/services/Architectural Model Maker.jpg"
+              alt="Service"
+              class="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
+            />
+            <div class="p-4 bg-white border border-gray-200">
+              <h3 class="font-semibold text-lg">Tesla</h3>
+            </div>
+          </div>
+
+          <div
+            class="service-card rounded-2xl overflow-hidden group cursor-pointer"
+            data-category="engineering"
+          >
+            <img
+              src="./assets/hero-section-left-side.jpg"
+              alt="Service"
+              class="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
+            />
+            <div class="p-4 bg-white border border-gray-200">
+              <h3 class="font-semibold text-lg">Pepsi</h3>
+            </div>
+          </div>
+          <div
+            class="service-card rounded-2xl overflow-hidden group cursor-pointer"
+            data-category="engineering"
+          >
+            <img
+              src="./assets/services/3D Printing.jpg"
+              alt="Service"
+              class="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
+            />
+            <div class="p-4 bg-white border border-gray-200">
+              <h3 class="font-semibold text-lg">AirBnb</h3>
+            </div>
+          </div>
+          <div
+            class="service-card rounded-2xl overflow-hidden group cursor-pointer"
+            data-category="engineering"
+          >
+            <img
+              src="./assets/services/Architectural Model Maker.jpg"
+              alt="Service"
+              class="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
+            />
+            <div class="p-4 bg-white border border-gray-200">
+              <h3 class="font-semibold text-lg">Casio</h3>
+            </div>
+          </div>
+
+          <div
+            class="service-card rounded-2xl overflow-hidden group cursor-pointer"
+            data-category="industrial"
+          >
+            <img
+              src="./assets/services/3D Visualization.jpg"
+              alt="Service"
+              class="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
+            />
+            <div class="p-4 bg-white border border-gray-200">
+              <h3 class="font-semibold text-lg">ESPS</h3>
+            </div>
+          </div>
+          <div
+            class="service-card rounded-2xl overflow-hidden group cursor-pointer"
+            data-category="industrial"
+          >
+            <img
+              src="./assets/services/Architectural Model Maker.jpg"
+              alt="Service"
+              class="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
+            />
+            <div class="p-4 bg-white border border-gray-200">
+              <h3 class="font-semibold text-lg">APMC</h3>
+            </div>
+          </div>
+          <div
+            class="service-card rounded-2xl overflow-hidden group cursor-pointer"
+            data-category="industrial"
+          >
+            <img
+              src="./assets/services/3D Printing.jpg"
+              alt="Service"
+              class="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
+            />
+            <div class="p-4 bg-white border border-gray-200">
+              <h3 class="font-semibold text-lg">H&M</h3>
+            </div>
+          </div>
+
+          <div
+            class="service-card rounded-2xl overflow-hidden group cursor-pointer"
+            data-category="3d-visualization"
+          >
+            <img
+              src="./assets/services/3D Visualization.jpg"
+              alt="Service"
+              class="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
+            />
+            <div class="p-4 bg-white border border-gray-200">
+              <h3 class="font-semibold text-lg">Mahindra</h3>
+            </div>
+          </div>
+          <div
+            class="service-card rounded-2xl overflow-hidden group cursor-pointer"
+            data-category="3d-visualization"
+          >
+            <img
+              src="./assets/services/3D Printing.jpg"
+              alt="Service"
+              class="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
+            />
+            <div class="p-4 bg-white border border-gray-200">
+              <h3 class="font-semibold text-lg">ITC</h3>
+            </div>
+          </div>
+          <div
+            class="service-card rounded-2xl overflow-hidden group cursor-pointer"
+            data-category="3d-visualization"
+          >
+            <img
+              src="./assets/services/3D Visualization.jpg"
+              alt="Service"
+              class="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
+            />
+            <div class="p-4 bg-white border border-gray-200">
+              <h3 class="font-semibold text-lg">Shivalik</h3>
+            </div>
+          </div>
+
+          <div
+            class="service-card rounded-2xl overflow-hidden group cursor-pointer"
+            data-category="3d-printing"
+          >
+            <img
+              src="./assets/services/3D Printing.jpg"
+              alt="Service"
+              class="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
+            />
+            <div class="p-4 bg-white border border-gray-200">
+              <h3 class="font-semibold text-lg">Birla</h3>
+            </div>
+          </div>
+
+          <div
+            class="service-card rounded-2xl overflow-hidden group cursor-pointer"
+            data-category="3d-printing"
+          >
+            <img
+              src="./assets/services/Architectural Model Maker.jpg"
+              alt="Service"
+              class="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
+            />
+            <div class="p-4 bg-white border border-gray-200">
+              <h3 class="font-semibold text-lg">J&P</h3>
+            </div>
+          </div>
+          <div
+            class="service-card rounded-2xl overflow-hidden group cursor-pointer"
+            data-category="3d-printing"
+          >
+            <img
+              src="./assets/services/3D Visualization.jpg"
+              alt="Service"
+              class="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
+            />
+            <div class="p-4 bg-white border border-gray-200">
+              <h3 class="font-semibold text-lg">MNc</h3>
+            </div>
+          </div>
+
+          <div
+            class="service-card rounded-2xl overflow-hidden group cursor-pointer"
+            data-category="piping"
+          >
+            <img
+              src="./assets/services/3D Printing.jpg"
+              alt="Service"
+              class="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
+            />
+            <div class="p-4 bg-white border border-gray-200">
+              <h3 class="font-semibold text-lg">Sharma Group</h3>
+            </div>
+          </div>
+          <div
+            class="service-card rounded-2xl overflow-hidden group cursor-pointer"
+            data-category="piping"
+          >
+            <img
+              src="./assets/hero-section-left-side.jpg"
+              alt="Service"
+              class="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
+            />
+            <div class="p-4 bg-white border border-gray-200">
+              <h3 class="font-semibold text-lg">Taj</h3>
+            </div>
+          </div>
+          <div
+            class="service-card rounded-2xl overflow-hidden group cursor-pointer"
+            data-category="marine"
+          >
+            <img
+              src="./assets/services/3D Visualization.jpg"
+              alt="Service"
+              class="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
+            />
+            <div class="p-4 bg-white border border-gray-200">
+              <h3 class="font-semibold text-lg">Mahindra</h3>
+            </div>
+          </div>
+          <div
+            class="service-card rounded-2xl overflow-hidden group cursor-pointer"
+            data-category="marine"
+          >
+            <img
+              src="./assets/services/3D Printing.jpg"
+              alt="Service"
+              class="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
+            />
+            <div class="p-4 bg-white border border-gray-200">
+              <h3 class="font-semibold text-lg">Jaguar</h3>
+            </div>
+          </div>
+          <div
+            class="service-card rounded-2xl overflow-hidden group cursor-pointer"
+            data-category="interior"
+          >
+            <img
+              src="./assets/services/Architectural Model Maker.jpg"
+              alt="Service"
+              class="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
+            />
+            <div class="p-4 bg-white border border-gray-200">
+              <h3 class="font-semibold text-lg">Balaji</h3>
+            </div>
+          </div>
+          <div
+            class="service-card rounded-2xl overflow-hidden group cursor-pointer"
+            data-category="interior"
+          >
+            <img
+              src="./assets/services/3D Visualization.jpg"
+              alt="Service"
+              class="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
+            />
+            <div class="p-4 bg-white border border-gray-200">
+              <h3 class="font-semibold text-lg">N&P</h3>
+            </div>
+          </div>
+          <div
+            class="service-card rounded-2xl overflow-hidden group cursor-pointer"
+            data-category="interior"
+          >
+            <img
+              src="./assets/services/Architectural Model Maker.jpg"
+              alt="Service"
+              class="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
+            />
+            <div class="p-4 bg-white border border-gray-200">
+              <h3 class="font-semibold text-lg">The Lila</h3>
+            </div>
+          </div>
+          <div
+            class="service-card rounded-2xl overflow-hidden group cursor-pointer"
+            data-category="interior"
+          >
+            <img
+              src="./assets/services/3D Printing.jpg"
+              alt="Service"
+              class="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
+            />
+            <div class="p-4 bg-white border border-gray-200">
+              <h3 class="font-semibold text-lg">Jio</h3>
+            </div>
+          </div>
+          <div
+            class="service-card rounded-2xl overflow-hidden group cursor-pointer"
+            data-category="master-plan"
+          >
+            <img
+              src="./assets/services/3D Visualization.jpg"
+              alt="Service"
+              class="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
+            />
+            <div class="p-4 bg-white border border-gray-200">
+              <h3 class="font-semibold text-lg">Telecom</h3>
+            </div>
+          </div>
+          <div
+            class="service-card rounded-2xl overflow-hidden group cursor-pointer"
+            data-category="master-plan"
+          >
+            <img
+              src="./assets/services/Architectural Model Maker.jpg"
+              alt="Service"
+              class="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
+            />
+            <div class="p-4 bg-white border border-gray-200">
+              <h3 class="font-semibold text-lg">Mumbai Bridge</h3>
+            </div>
+          </div>
+          <div
+            class="service-card rounded-2xl overflow-hidden group cursor-pointer"
+            data-category="master-plan"
+          >
+            <img
+              src="./assets/services/3D Printing.jpg"
+              alt="Service"
+              class="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
+            />
+            <div class="p-4 bg-white border border-gray-200">
+              <h3 class="font-semibold text-lg">Ahmedabad Riverfront</h3>
+            </div>
+          </div>
+          <div
+            class="service-card rounded-2xl overflow-hidden group cursor-pointer"
+            data-category="scale-models"
+          >
+            <img
+              src="./assets/services/3D Visualization.jpg"
+              alt="Service"
+              class="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
+            />
+            <div class="p-4 bg-white border border-gray-200">
+              <h3 class="font-semibold text-lg">Mumbai Metro</h3>
+            </div>
+          </div>
+          <div
+            class="service-card rounded-2xl overflow-hidden group cursor-pointer"
+            data-category="scale-models"
+          >
+            <img
+              src="./assets/hero-section-left-side.jpg"
+              alt="Service"
+              class="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
+            />
+            <div class="p-4 bg-white border border-gray-200">
+              <h3 class="font-semibold text-lg">Delhi Metro</h3>
+            </div>
+          </div>
+          <div
+            class="service-card rounded-2xl overflow-hidden group cursor-pointer"
+            data-category="scale-models"
+          >
+            <img
+              src="./assets/services/3D Printing.jpg"
+              alt="Service"
+              class="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
+            />
+            <div class="p-4 bg-white border border-gray-200">
+              <h3 class="font-semibold text-lg">Cred</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="px-4 pb-8">
+        <div
+          class="container px-4 py-16 text-center border border-dashed border-gray-300 rounded-2xl bg-gray-50"
+        >
+          <h2 class="font-bebas text-6xl mb-4">Next Section</h2>
+          <p class="text-gray-600 text-lg">
+            Development Under Process! Comming Soon...
+          </p>
+        </div>
+      </div>
     </main>
     <script>
       const carousel = document.getElementById("carousel");
@@ -478,6 +936,35 @@
 
       // Optional auto-slide
       setInterval(nextSlide, 4000);
+
+      // Service Tabs Filtering =================================
+      const tabs = document.querySelectorAll(".tab-btn");
+      const cards = document.querySelectorAll(".service-card");
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          const filter = tab.dataset.filter;
+
+          // active tab style
+          tabs.forEach((t) => {
+            t.classList.remove("bg-black", "text-white");
+            t.classList.add("bg-gray-200", "text-black");
+          });
+
+          tab.classList.add("bg-black", "text-white");
+
+          // filter cards
+          cards.forEach((card) => {
+            const category = card.dataset.category;
+
+            if (filter === "all" || category === filter || category === "all") {
+              card.classList.remove("hidden");
+            } else {
+              card.classList.add("hidden");
+            }
+          });
+        });
+      });
     </script>
   </body>
 </html>
