@@ -174,3 +174,23 @@ const observer = new IntersectionObserver((entries, observer) => {
 if (processFlow) {
     observer.observe(processFlow);
 }
+
+// SERVICE CAROUSELS AUTO-SLIDE
+function setupServiceCarousel(carouselId, interval = 3000) {
+    const carousel = document.getElementById(carouselId);
+    if (!carousel) return;
+
+    const slides = carousel.children;
+    let index = 0;
+
+    function scroll() {
+        index = (index + 1) % slides.length;
+        carousel.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    setInterval(scroll, interval);
+}
+
+setupServiceCarousel("serviceCarousel", 3000);
+setupServiceCarousel("visualizationCarousel", 3500); // Staggered timing
+setupServiceCarousel("paintingCarousel", 4000);      // Staggered timing
