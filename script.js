@@ -66,18 +66,15 @@ if (activeTab) {
     filterCards(activeTab.dataset.filter);
 }
 
-//CLIENT CAROUSEL
-const clientCarousel = document.getElementById("clientCarousel");
-const clientCards = clientCarousel.children;
-const clientCarousel1 = document.getElementById("clientCarousel1");
-const clientCards1 = clientCarousel1.children;
-const cityCarousel2 = document.getElementById("cityCarousel2");
-const cityCards2 = cityCarousel2.children;
-let clientIndex = 0;
+// CLIENT CAROUSELS
+const clientCarousels = document.querySelectorAll('.client-carousel');
+const clientIndices = Array.from(clientCarousels).map(() => 0);
+const cityCarousel2 = document.getElementById('cityCarousel2');
+const cityCards2 = cityCarousel2 ? cityCarousel2.children : [];
 let cityIndex = 0;
 
-function getCardsPerView(carouselId) {
-    if (carouselId === "cityCarousel2") {
+function getCardsPerView(carousel) {
+    if (carousel && carousel.id === 'cityCarousel2') {
         if (window.innerWidth < 768) return 1; // mobile
         if (window.innerWidth < 1024) return 2; // tablet
         return 4; // desktop
@@ -86,33 +83,31 @@ function getCardsPerView(carouselId) {
 }
 
 function getCardWidth(carousel) {
-    return carousel.children[0].offsetWidth + 24; // card width + gap (1.5rem = 24px)
+    const first = carousel && carousel.children[0];
+    return first ? first.offsetWidth + 24 : 0; // card width + gap (1.5rem = 24px)
 }
 
 function scrollClient() {
-    const cardsPerView = getCardsPerView("clientCarousel");
-    const maxIndex = Math.max(0, clientCards.length - cardsPerView);
-    clientIndex = (clientIndex + 1) % (maxIndex + 1);
-    clientCarousel.style.transform = `translateX(-${clientIndex * getCardWidth(clientCarousel)
-        }px)`;
-    clientCarousel1.style.transform = `translateX(-${clientIndex * getCardWidth(clientCarousel1)
-        }px)`;
+    clientCarousels.forEach((carousel, idx) => {
+        const cardsPerView = getCardsPerView(carousel);
+        const maxIndex = Math.max(0, carousel.children.length - cardsPerView);
+        clientIndices[idx] = (clientIndices[idx] + 1) % (maxIndex + 1);
+        carousel.style.transform = `translateX(-${clientIndices[idx] * getCardWidth(carousel)}px)`;
+    });
 }
 
 function scrollCity() {
-    const cardsPerView = getCardsPerView("cityCarousel2");
-    const maxIndex = Math.max(0, cityCards2.length - cardsPerView);
+    if (!cityCarousel2) return;
+    const cardsPerView = getCardsPerView(cityCarousel2);
+    const maxIndex = Math.max(0, cityCarousel2.children.length - cardsPerView);
     cityIndex = (cityIndex + 1) % (maxIndex + 1);
-    cityCarousel2.style.transform = `translateX(-${cityIndex * getCardWidth(cityCarousel2)
-        }px)`;
+    cityCarousel2.style.transform = `translateX(-${cityIndex * getCardWidth(cityCarousel2)}px)`;
 }
 
-window.addEventListener("resize", () => {
-    clientIndex = 0;
-    cityIndex = 0;
-    clientCarousel.style.transform = `translateX(0)`;
-    clientCarousel1.style.transform = `translateX(0)`;
-    cityCarousel2.style.transform = `translateX(0)`;
+window.addEventListener('resize', () => {
+    clientIndices.forEach((_, idx) => (clientIndices[idx] = 0));
+    clientCarousels.forEach((carousel) => (carousel.style.transform = `translateX(0)`));
+    if (cityCarousel2) cityCarousel2.style.transform = `translateX(0)`;
 });
 
 setInterval(scrollClient, 3000);

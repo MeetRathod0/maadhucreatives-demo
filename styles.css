@@ -23,3 +23,19 @@ body.menu-open {
   min-width: 100%;
   flex-shrink: 0;
 }
+
+/* Client carousel logos - consistent display to avoid stretching/blur */
+.client-carousel img {
+  width: 150px;
+  height: 70px;
+  object-fit: contain;
+  image-rendering: auto;
+}
+
+/* City thumbnails - cover the card area */
+#cityCarousel2 img {
+  object-fit: cover;
+  height: 160px;
+  width: auto;
+}
+
