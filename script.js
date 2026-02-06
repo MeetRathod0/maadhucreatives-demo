@@ -188,4 +188,4 @@ function setupServiceCarousel(carouselId, interval = 3000) {
 
 setupServiceCarousel("serviceCarousel", 3000);
 setupServiceCarousel("visualizationCarousel", 3500); // Staggered timing
-setupServiceCarousel("paintingCarousel", 4000);      // Staggered timing
+setupServiceCarousel("PrintingCarousel", 4000);      // Staggered timing
