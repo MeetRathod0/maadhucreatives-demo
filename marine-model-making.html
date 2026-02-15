@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script>
+        function openMenu() {
+            document.body.classList.add("menu-open");
+        }
+        function closeMenu() {
+            document.body.classList.remove("menu-open");
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Code:wght@300..700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet" />
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+        }
+
+        .font-bebas {
+            font-family: "Bebas Neue", sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="border-b border-b-gray-200 sticky top-0 z-50 bg-white">
+        <div class="max-w-[1280px] mx-auto flex justify-between items-center pl-2 pr-5 py-1 z-20">
+            <a href="index.html">
+                <img src="./assets/logo.gif" alt="logo" class="w-[75px] md:w-[90px] h-auto object-cover" /></a>
+            <div class="float-right relative w-[36px] h-[30px] md:w-[40px] md:h-[36px] flex flex-col gap-1 bg-transparent items-center justify-center p-[7px] cursor-pointer md:hidden"
+                id="hamburger-1" onclick="openMenu()">
+                <span class="bg-[#064998] h-1 w-full rounded-full -z-1"></span>
+                <span class="bg-[#064998] h-1 w-full rounded-full -z-1"></span>
+                <span class="bg-[#064998] h-1 w-full rounded-full -z-1"></span>
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-base font-medium">
+                <a href="our-services.html" data-image="./assets/Scale-Model-Making-Company.webp"
+                    class="hover:underline hover:text-[#064998] text-[#064998]">Our Services</a>
+                <a href="#" data-image="./assets/blog.webp" class="hover:underline hover:text-[#064998]">Blog</a>
+                <a href="#" data-image="./assets/career.webp" class="hover:underline hover:text-[#064998]">Career</a>
+                <a href="about-us.html" data-image="./assets/about-us-1920.webp"
+                    class="hover:underline hover:text-[#064998]">About
+                    Us</a>
+                <a href="contact-us.html" data-image="./assets/contact-us-n.webp"
+                    class="hover:underline hover:text-[#064998]">Contact
+                    Us</a>
+            </div>
+            <div
+                class="menu fixed inset-0 overflow-hidden opacity-0 top-[-100%] w-full h-full bg-slate-100 transition-all duration-500 ease-in-out z-50">
+                <div class="grid grid-cols-5 h-full">
+                    <div
+                        class="col-span-5 md:col-span-2 h-screen flex flex-col gap-5 justify-center pl-[6%] md:pl-[16%] pt-[20%] pb-[4%] text-3xl font-bold">
+                        <a href="our-services.html" data-image="./assets/Scale-Model-Making-Company.webp"
+                            class="hover:underline">Scale Model
+                            Making</a>
+                        <a href="#" data-image="./assets/3d-visulization.webp" class="hover:underline">3D
+                            Visualization</a>
+                        <a href="#" data-image="./assets/3dprinting.webp" class="hover:underline">3D Printing</a>
+                        <a href="#" data-image="./assets/blog.webp" class="hover:underline">Blog</a>
+                        <a href="#" data-image="./assets/career.webp" class="hover:underline">Career</a>
+                        <a href="about-us.html" data-image="./assets/about-us-1920.webp" class="hover:underline">About
+                            Us</a>
+                        <a href="contact-us.html" data-image="./assets/contact-us-n.webp"
+                            class="hover:underline">Contact Us</a>
+                        <!-- Icons omitted for brevity but should be here -->
+                    </div>
+                    <div class="col-span-3 h-screen relative p-5 hidden md:flex">
+                        <img id="menu-preview" src="./assets/Scale-Model-Making-Company.webp" alt="3D visualization"
+                            class="w-full h-full object-cover rounded-2xl border border-white" />
+                    </div>
+                    <div class="absolute top-5 right-5 cursor-pointer p-2 bg-white rounded-full">
+                        <svg class="h-6 md:w-8 h-6 md:h-8 text-gray-800 dark:text-black" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"
+                            onclick="closeMenu()">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18 17.94 6M18 18 6.06 6" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container px-4">
+            <!-- Hero Section -->
+            <div class="pt-20 pb-12 flex flex-col items-center text-center">
+                <h1 class="font-bebas text-7xl md:text-[84px] text-[#064998]">Marine Model Making</h1>
+                <p class="text-gray-700 text-lg max-w-4xl mt-4">
+                    Design is where science and art break even.- Mieke Gerritzen
+                </p>
+            </div>
+
+            <!-- Intro Details -->
+            <div class="pb-16 max-w-5xl mx-auto text-center">
+                <div class="mb-8">
+                    <p class="text-xl font-medium italic text-gray-800 mb-2">
+                        "In the world of marine models, every vessel is a story waiting to be told in the language of
+                        craftsmanship and precision."
+                    </p>
+                </div>
+
+                <p class="text-gray-700 leading-relaxed text-lg mb-6 text-center">
+                    Marine models or vessel models are computational representations of marine processes, aiding in
+                    simulating and understanding interactions in oceans and seas. These tools are crucial in various
+                    fields, enabling researchers and policymakers to make informed decisions about marine resource
+                    management, environmental conservation, and disaster preparedness.
+                </p>
+            </div>
+
+            <!-- Gallery Section -->
+            <div class="pb-20">
+                <h2 class="font-bebas text-5xl mb-10 text-center text-[#064998]">Our Work</h2>
+                <!-- Gallery Grid: 15 Cards -->
+                <div id="gallery-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Card 1 -->
+                    <div class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition cursor-pointer"
+                        onclick="openModal(this)">
+                        <img src="./assets/services/AEM/Architectural Model Maker.jpeg" class="w-full h-64 object-cover"
+                            alt="Residential High-Rise Scale Model">
+                        <div
+                            class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-white font-bebas text-2xl tracking-wide px-4 text-center">Residential
+                                High-Rise Scale Model</span>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition cursor-pointer"
+                        onclick="openModal(this)">
+                        <img src="./assets/services/AEM/Scale Modal making.jpeg" class="w-full h-64 object-cover"
+                            alt="Luxury Apartment Model">
+                        <div
+                            class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-white font-bebas text-2xl tracking-wide px-4 text-center">Luxury Apartment
+                                Model</span>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition cursor-pointer"
+                        onclick="openModal(this)">
+                        <img src="./assets/services/AEM/Scale modal construction.jpeg" class="w-full h-64 object-cover"
+                            alt="Multi-Tower Residential Township Model">
+                        <div
+                            class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-white font-bebas text-2xl tracking-wide px-4 text-center">Multi-Tower
+                                Residential Township Model</span>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition cursor-pointer"
+                        onclick="openModal(this)">
+                        <img src="./assets/services/AEM/3D Visualization.jpeg" class="w-full h-64 object-cover"
+                            alt="Interactive Site Masterplan Model">
+                        <div
+                            class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-white font-bebas text-2xl tracking-wide px-4 text-center">Interactive Site
+                                Masterplan Model</span>
+                        </div>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition cursor-pointer"
+                        onclick="openModal(this)">
+                        <img src="./assets/services/AEM/AEM5.jpeg" class="w-full h-64 object-cover"
+                            alt="Industrial Showroom & Retail Outlet Scale Model">
+                        <div
+                            class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-white font-bebas text-2xl tracking-wide px-4 text-center">Industrial
+                                Showroom & Retail Outlet Scale Model</span>
+                        </div>
+                    </div>
+                    <!-- Card 6 -->
+                    <div class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition cursor-pointer"
+                        onclick="openModal(this)">
+                        <img src="./assets/services/AEM/AEM6.jpeg" class="w-full h-64 object-cover"
+                            alt="Industrial Plant & Facility Layout Model">
+                        <div
+                            class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-white font-bebas text-2xl tracking-wide px-4 text-center">Industrial Plant
+                                & Facility Layout Model</span>
+                        </div>
+                    </div>
+                    <!-- Card 7 -->
+                    <div class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition cursor-pointer"
+                        onclick="openModal(this)">
+                        <img src="./assets/services/AEM/AEM7.jpeg" class="w-full h-64 object-cover" alt="Cafe Model">
+                        <div
+                            class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-white font-bebas text-2xl tracking-wide px-4 text-center">Cafe
+                                Model</span>
+                        </div>
+                    </div>
+                    <!-- Card 8 -->
+                    <div class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition cursor-pointer"
+                        onclick="openModal(this)">
+                        <img src="./assets/services/AEM/AEM8.jpeg" class="w-full h-64 object-cover"
+                            alt="High Tower Model">
+                        <div
+                            class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-white font-bebas text-2xl tracking-wide px-4 text-center">High Tower
+                                Model</span>
+                        </div>
+                    </div>
+                    <!-- Card 9 -->
+                    <div class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition cursor-pointer"
+                        onclick="openModal(this)">
+                        <img src="./assets/services/AEM/AEM9.jpeg" class="w-full h-64 object-cover"
+                            alt="Multi Tower Modal">
+                        <div
+                            class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-white font-bebas text-2xl tracking-wide px-4 text-center">Multi Tower
+                                Model</span>
+                        </div>
+                    </div>
+                    <!-- Card 10 -->
+                    <div class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition cursor-pointer"
+                        onclick="openModal(this)">
+                        <img src="./assets/services/AEM/AEM10.jpeg" class="w-full h-64 object-cover"
+                            alt="Roof Top Modal">
+                        <div
+                            class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-white font-bebas text-2xl tracking-wide px-4 text-center">Roof Top
+                                Model</span>
+                        </div>
+                    </div>
+                    <!-- Card 11 -->
+                    <div class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition cursor-pointer"
+                        onclick="openModal(this)">
+                        <img src="./assets/services/AEM/AEM11.jpeg" class="w-full h-64 object-cover"
+                            alt="Residential Scale Model">
+                        <div
+                            class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-white font-bebas text-2xl tracking-wide px-4 text-center">Residential
+                                Scale Model</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 12 -->
+                    <div class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition cursor-pointer"
+                        onclick="openModal(this)">
+                        <img src="./assets/services/AEM/AEM12.jpeg" class="w-full h-64 object-cover"
+                            alt="Residential Model">
+                        <div
+                            class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-white font-bebas text-2xl tracking-wide px-4 text-center">Residential
+                                Model</span>
+                        </div>
+                    </div>
+                    <!-- Card 13 -->
+                    <div class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition cursor-pointer"
+                        onclick="openModal(this)">
+                        <img src="./assets/services/AEM/AEM13.jpeg" class="w-full h-64 object-cover" alt="Cafe Model">
+                        <div
+                            class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-white font-bebas text-2xl tracking-wide px-4 text-center">Cafe
+                                Model</span>
+                        </div>
+                    </div>
+                    <!-- Card 14 -->
+                    <div class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition cursor-pointer"
+                        onclick="openModal(this)">
+                        <img src="./assets/services/AEM/AEM14.jpeg" class="w-full h-64 object-cover"
+                            alt="Railway Tunnel Model">
+                        <div
+                            class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-white font-bebas text-2xl tracking-wide px-4 text-center">Railway
+                                Tunnel Model</span>
+                        </div>
+                    </div>
+                    <!-- Card 15 -->
+                    <div class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition cursor-pointer"
+                        onclick="openModal(this)">
+                        <img src="./assets/services/AEM/AEM15.jpeg" class="w-full h-64 object-cover"
+                            alt="Tourism Model">
+                        <div
+                            class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-white font-bebas text-2xl tracking-wide px-4 text-center">Tourism
+                                Model</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="pb-20 pt-20">
+                <div class="mb-16">
+                    <h2 class="font-bebas text-6xl max-md:text-5xl mb-4 text-center">
+                        FAQ's About Scale model making
+                    </h2>
+                    <p class="text-gray-700 text-lg max-w-4xl text-center mx-auto">
+                        If this is your first time using a scale model service, you may have questions. Read on to learn
+                        more.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="space-y-4">
+                        <!-- FAQ 1 -->
+                        <div class="border border-gray-200 rounded-2xl overflow-hidden group">
+                            <button
+                                class="faq-btn w-full px-4 py-3 flex justify-between items-center hover:bg-gray-50 transition"
+                                onclick="toggleFAQ(this)">
+                                <span class="font-semibold text-base text-left">What type of scale models does Maadhu
+                                    Creatives
+                                    produce?</span>
+                                <span
+                                    class="text-2xl text-[#064998] transform transition-transform duration-300">+</span>
+                            </button>
+                            <div class="faq-content hidden px-6 pb-6 border-t border-gray-200 bg-gray-50">
+                                <div class="flex flex-col md:flex-row gap-6 pt-4">
+                                    <div class="w-full md:w-1/3">
+                                        <img src="./assets/FAQ/Scale Modal making.jpeg"
+                                            alt="Maadhu Creatives Model Types"
+                                            class="rounded-2xl w-full h-48 object-cover shadow-sm" />
+                                    </div>
+                                    <div class="w-full md:w-2/3 flex flex-col gap-3">
+                                        <p class="text-gray-700 text-sm leading-relaxed">
+                                            Maadhu Creatives produces a comprehensive range of high-precision scale
+                                            models, customized to
+                                            meet
+                                            diverse industry needs. Our expertise spans across creating realistic
+                                            representations for
+                                            architectural, industrial, and engineering projects. We combine traditional
+                                            craftsmanship with
+                                            cutting-edge technology to deliver models that are not only visually
+                                            stunning but also
+                                            functionally
+                                            informative, helping clients visualize complex designs with clarity.
+                                        </p>
+                                        <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1">
+                                            <li><strong>Architectural Models:</strong> Residential towers, commercial
+                                                complexes, and master
+                                                plans.</li>
+                                            <li><strong>Industrial & Engineering Models:</strong> Detailed machinery,
+                                                plant layouts, and
+                                                process
+                                                flow prototypes.</li>
+                                            <li><strong>Marine & Offshore Models:</strong> Ships, rigs, and port
+                                                infrastructure.</li>
+                                            <li><strong>Interior & Sectional Models:</strong> Showing internal layouts,
+                                                furniture, and
+                                                spatial
+                                                flow.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 2 -->
+                        <div class="border border-gray-200 rounded-2xl overflow-hidden group">
+                            <button
+                                class="faq-btn w-full px-4 py-3 flex justify-between items-center hover:bg-gray-50 transition"
+                                onclick="toggleFAQ(this)">
+                                <span class="font-semibold text-base text-left">How much does it cost to make a
+                                    model?</span>
+                                <span
+                                    class="text-2xl text-[#064998] transform transition-transform duration-300">+</span>
+                            </button>
+                            <div class="faq-content hidden px-6 pb-6 border-t border-gray-200 bg-gray-50">
+                                <div class="flex flex-col md:flex-row gap-6 pt-4">
+                                    <div class="w-full md:w-1/3">
+                                        <img src="./assets/FAQ/SCL.jpeg" alt="Cost Factors"
+                                            class="rounded-2xl w-full h-48 object-cover shadow-sm" />
+                                    </div>
+                                    <div class="w-full md:w-2/3 flex flex-col gap-3">
+                                        <p class="text-gray-700 text-sm leading-relaxed">
+                                            The cost of a scale model is not fixed; it is highly dependent on the
+                                            specific requirements of
+                                            each
+                                            project. We provide tailored quotes that reflect the intricacy and scope of
+                                            the work involved.
+                                            While
+                                            simpler conceptual models are more affordable, high-fidelity presentation
+                                            models requiring
+                                            premium
+                                            materials and lighting systems will command a higher investment. Our team
+                                            works with you to
+                                            balance
+                                            budget and impact.
+                                        </p>
+                                        <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1">
+                                            <li><strong>Complexity & Detail:</strong> The level of realism and fine
+                                                detailing required.</li>
+                                            <li><strong>Scale & Size:</strong> Larger models or those with minute scales
+                                                require more
+                                                material
+                                                and labor.</li>
+                                            <li><strong>Features:</strong> Interactive lighting, motorized parts, or
+                                                cutaway sections.</li>
+                                            <li><strong>Urgency:</strong> Expedited timelines may incur additional costs
+                                                for overtime
+                                                resources.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 3 -->
+                        <div class="border border-gray-200 rounded-2xl overflow-hidden group">
+                            <button
+                                class="faq-btn w-full px-4 py-3 flex justify-between items-center hover:bg-gray-50 transition"
+                                onclick="toggleFAQ(this)">
+                                <span class="font-semibold text-base text-left">What info do I need to provide for scale
+                                    model
+                                    construction?</span>
+                                <span
+                                    class="text-2xl text-[#064998] transform transition-transform duration-300">+</span>
+                            </button>
+                            <div class="faq-content hidden px-6 pb-6 border-t border-gray-200 bg-gray-50">
+                                <div class="flex flex-col md:flex-row gap-6 pt-4">
+                                    <div class="w-full md:w-1/3">
+                                        <img src="./assets/FAQ/Scale modal construction.jpeg" alt="Information Required"
+                                            class="rounded-2xl w-full h-48 object-cover shadow-sm" />
+                                    </div>
+                                    <div class="w-full md:w-2/3 flex flex-col gap-3">
+                                        <p class="text-gray-700 text-sm leading-relaxed">
+                                            To build an accurate and high-quality scale model, we require a
+                                            comprehensive set of design
+                                            documents. The more information you provide, the closer the final model will
+                                            match your vision.
+                                            Our
+                                            process begins with a thorough review of your files to identify any
+                                            potential challenges or
+                                            opportunities for enhancement before construction begins.
+                                        </p>
+                                        <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1">
+                                            <li><strong>CAD Drawings (DWG/DXF):</strong> Floor plans, elevations, and
+                                                sections are
+                                                essential.
+                                            </li>
+                                            <li><strong>3D Files:</strong> SketchUp, Rhino, or Revit files help us
+                                                understand the volume and
+                                                geometry.</li>
+                                            <li><strong>Material References:</strong> Color palettes, texture images,
+                                                and finish
+                                                specifications.
+                                            </li>
+                                            <li><strong>Site Photography:</strong> For landscape or context models,
+                                                photos of the actual
+                                                site
+                                                are helpful.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 4 -->
+                        <div class="border border-gray-200 rounded-2xl overflow-hidden group">
+                            <button
+                                class="faq-btn w-full px-4 py-3 flex justify-between items-center hover:bg-gray-50 transition"
+                                onclick="toggleFAQ(this)">
+                                <span class="font-semibold text-base text-left">When can I expect my scale model to be
+                                    completed?</span>
+                                <span
+                                    class="text-2xl text-[#064998] transform transition-transform duration-300">+</span>
+                            </button>
+                            <div class="faq-content hidden px-6 pb-6 border-t border-gray-200 bg-gray-50">
+                                <div class="flex flex-col md:flex-row gap-6 pt-4">
+                                    <div class="w-full md:w-1/3">
+                                        <img src="./assets/FAQ/Scale modal.jpeg" alt="Completion Time"
+                                            class="rounded-2xl w-full h-48 object-cover shadow-sm" />
+                                    </div>
+                                    <div class="w-full md:w-2/3 flex flex-col gap-3">
+                                        <p class="text-gray-700 text-sm leading-relaxed">
+                                            Our standard timeline for completing a scale model ranges from 25 to 45
+                                            days, but this is
+                                            tailored
+                                            to the project's scope. We pride ourselves on punctuality and will provide a
+                                            detailed schedule
+                                            at
+                                            the start of the project. We also offer milestone updates so you can track
+                                            the progress from the
+                                            initial laser cutting to the final assembly and finishing touches.
+                                        </p>
+                                        <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1">
+                                            <li><strong>Standard Projects:</strong> Typically 3-4 weeks for average
+                                                architectural models.
+                                            </li>
+                                            <li><strong>Complex/Large Scale:</strong> 6-8 weeks for master plans or
+                                                highly detailed
+                                                industrial
+                                                models.</li>
+                                            <li><strong>Review Cycles:</strong> Changes requested during the review
+                                                phase may influence the
+                                                final delivery date.</li>
+                                            <li><strong>Expedited Delivery:</strong> Urgent requests can be accommodated
+                                                with a dedicated
+                                                team.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 5 -->
+                        <div class="border border-gray-200 rounded-2xl overflow-hidden group">
+                            <button
+                                class="faq-btn w-full px-4 py-3 flex justify-between items-center hover:bg-gray-50 transition"
+                                onclick="toggleFAQ(this)">
+                                <span class="font-semibold text-base text-left">How to decide what should be the scale
+                                    of my
+                                    model?</span>
+                                <span
+                                    class="text-2xl text-[#064998] transform transition-transform duration-300">+</span>
+                            </button>
+                            <div class="faq-content hidden px-6 pb-6 border-t border-gray-200 bg-gray-50">
+                                <div class="flex flex-col md:flex-row gap-6 pt-4">
+                                    <div class="w-full md:w-1/3">
+                                        <img src="./assets/FAQ/SCL3.jpeg" alt="Scale Selection"
+                                            class="rounded-2xl w-full h-48 object-cover shadow-sm" />
+                                    </div>
+                                    <div class="w-full md:w-2/3 flex flex-col gap-3">
+                                        <p class="text-gray-700 text-sm leading-relaxed">
+                                            Selecting the right scale is a critical decision that balances the amount of
+                                            detail you want to
+                                            show
+                                            with the physical size of the model. The purpose of the model often dictates
+                                            the scale: sales
+                                            models
+                                            need to be impressive and detailed, while planning models focus more on
+                                            massing and context. We
+                                            guide you through this selection based on where the model will be displayed.
+                                        </p>
+                                        <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1">
+                                            <li><strong>1:100 to 1:200:</strong> Ideal for single buildings or
+                                                residential complexes to show
+                                                facade details.</li>
+                                            <li><strong>1:500 to 1:1000:</strong> Best for master plans and large urban
+                                                developments to show
+                                                site context.</li>
+                                            <li><strong>1:20 to 1:50:</strong> Perfect for interior models and detailed
+                                                mockups.</li>
+                                            <li><strong>Display Constraints:</strong> Consider door widths and table
+                                                sizes when choosing the
+                                                final dimension.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 6 -->
+                        <div class="border border-gray-200 rounded-2xl overflow-hidden group">
+                            <button
+                                class="faq-btn w-full px-4 py-3 flex justify-between items-center hover:bg-gray-50 transition"
+                                onclick="toggleFAQ(this)">
+                                <span class="font-semibold text-base text-left">What materials are used for the
+                                    model?</span>
+                                <span
+                                    class="text-2xl text-[#064998] transform transition-transform duration-300">+</span>
+                            </button>
+                            <div class="faq-content hidden px-6 pb-6 border-t border-gray-200 bg-gray-50">
+                                <div class="flex flex-col md:flex-row gap-6 pt-4">
+                                    <div class="w-full md:w-1/3">
+                                        <img src="./assets/FAQ/SCL4.jpeg" alt="Materials Used"
+                                            class="rounded-2xl w-full h-48 object-cover shadow-sm" />
+                                    </div>
+                                    <div class="w-full md:w-2/3 flex flex-col gap-3">
+                                        <p class="text-gray-700 text-sm leading-relaxed">
+                                            We use a diverse palette of high-quality materials to ensure durability and
+                                            aesthetic appeal.
+                                            Our
+                                            choice of material depends on the desired finish—whether it's an abstract,
+                                            conceptual look or a
+                                            hyper-realistic presentation. Advanced laser cutting and 3D printing
+                                            technologies allow us to
+                                            work
+                                            precisely with these materials to create intricate components.
+                                        </p>
+                                        <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1">
+                                            <li><strong>Acrylic & Plexiglass:</strong> For sharp, clean lines and glass
+                                                facades.</li>
+                                            <li><strong>High-Density Polyurethane (Chemical Wood):</strong> For detailed
+                                                carving and durable
+                                                base structures.</li>
+                                            <li><strong>Wood & Veneers:</strong> To add warmth and a natural touch to
+                                                bases or conceptual
+                                                models.</li>
+                                            <li><strong>3D Printing Resins:</strong> For complex geometries and fine
+                                                organic shapes.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 7 -->
+                        <div class="border border-gray-200 rounded-2xl overflow-hidden group">
+                            <button
+                                class="faq-btn w-full px-4 py-3 flex justify-between items-center hover:bg-gray-50 transition"
+                                onclick="toggleFAQ(this)">
+                                <span class="font-semibold text-base text-left">Can I come to visit in person?</span>
+                                <span
+                                    class="text-2xl text-[#064998] transform transition-transform duration-300">+</span>
+                            </button>
+                            <div class="faq-content hidden px-6 pb-6 border-t border-gray-200 bg-gray-50">
+                                <div class="flex flex-col md:flex-row gap-6 pt-4">
+                                    <div class="w-full md:w-1/3">
+                                        <img src="./assets/FAQ/visit_in_person.jpeg" alt="Visit Us"
+                                            class="rounded-2xl w-full h-48 object-cover shadow-sm" />
+                                    </div>
+                                    <div class="w-full md:w-2/3 flex flex-col gap-3">
+                                        <p class="text-gray-700 text-sm leading-relaxed">
+                                            Yes, we highly encourage client visits! Seeing the model-making process
+                                            firsthand is an
+                                            experience
+                                            in itself. It allows you to meet the artisans working on your project and
+                                            discuss details in
+                                            real
+                                            time. Our studio is equipped to host meetings where we can review materials,
+                                            samples, and
+                                            progress
+                                            stages of your model.
+                                        </p>
+                                        <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1">
+                                            <li><strong>Schedule an Appointment:</strong> Please call or email us ahead
+                                                of time to ensure
+                                                the
+                                                relevant team members are available.</li>
+                                            <li><strong>Review Samples:</strong> Physcially see and touch material
+                                                samples to make informed
+                                                decisions.</li>
+                                            <li><strong>Workshop Tour:</strong> Get a behind-the-scenes look at our
+                                                laser cutters, 3D
+                                                printers,
+                                                and assembly stations.</li>
+                                            <li><strong>Face-to-Face Consultation:</strong> Solve complex design queries
+                                                instantly with our
+                                                technical leads.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 8 -->
+                        <div class="border border-gray-200 rounded-2xl overflow-hidden group">
+                            <button
+                                class="faq-btn w-full px-4 py-3 flex justify-between items-center hover:bg-gray-50 transition"
+                                onclick="toggleFAQ(this)">
+                                <span class="font-semibold text-base text-left">How will I receive the scale
+                                    model?</span>
+                                <span
+                                    class="text-2xl text-[#064998] transform transition-transform duration-300">+</span>
+                            </button>
+                            <div class="faq-content hidden px-6 pb-6 border-t border-gray-200 bg-gray-50">
+                                <div class="flex flex-col md:flex-row gap-6 pt-4">
+                                    <div class="w-full md:w-1/3">
+                                        <img src="./assets/FAQ/SCAL5.jpeg" alt="Delivery & Shipping"
+                                            class="rounded-2xl w-full h-48 object-cover shadow-sm" />
+                                    </div>
+                                    <div class="w-full md:w-2/3 flex flex-col gap-3">
+                                        <p class="text-gray-700 text-sm leading-relaxed">
+                                            Delivery is a crucial phase, and we handle it with extreme care. Depending
+                                            on the model's size
+                                            and
+                                            destination, we offer various delivery methods. For local projects, our team
+                                            often personally
+                                            delivers and installs the model. For international or long-distance
+                                            shipping, we construct
+                                            custom
+                                            flight cases or heavy-duty crates to ensure the model arrives in pristine
+                                            condition.
+                                        </p>
+                                        <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1">
+                                            <li><strong>Custom Crating:</strong> Foam-lined wooden crates designed
+                                                specifically for your
+                                                model's
+                                                dimensions.</li>
+                                            <li><strong>Global Logistics:</strong> Partnerships with reliable freight
+                                                forwarders for secure
+                                                international transport.</li>
+                                            <li><strong>On-Site Installation:</strong> Our team can travel to your site
+                                                to unpack and set up
+                                                large display models.</li>
+                                            <li><strong>Insurance:</strong> All shipments are fully insured against
+                                                transit damage for your
+                                                peace of mind.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 9 -->
+                        <div class="border border-gray-200 rounded-2xl overflow-hidden group">
+                            <button
+                                class="faq-btn w-full px-4 py-3 flex justify-between items-center hover:bg-gray-50 transition"
+                                onclick="toggleFAQ(this)">
+                                <span class="font-semibold text-base text-left">Do I need to see the final product in
+                                    person before
+                                    shipping?</span>
+                                <span
+                                    class="text-2xl text-[#064998] transform transition-transform duration-300">+</span>
+                            </button>
+                            <div class="faq-content hidden px-6 pb-6 border-t border-gray-200 bg-gray-50">
+                                <div class="flex flex-col md:flex-row gap-6 pt-4">
+                                    <div class="w-full md:w-1/3">
+                                        <img src="./assets/FAQ/SCL6.jpeg" alt="Final Approval"
+                                            class="rounded-2xl w-full h-48 object-cover shadow-sm" />
+                                    </div>
+                                    <div class="w-full md:w-2/3 flex flex-col gap-3">
+                                        <p class="text-gray-700 text-sm leading-relaxed">
+                                            While an in-person review is always welcome, it is not strictly necessary.
+                                            We have a robust
+                                            remote
+                                            approval process designed for our global clientele. We provide
+                                            high-resolution photographs and
+                                            video walkthroughs of the completed model from every angle. This digital
+                                            approval ensures you
+                                            are
+                                            completely satisfied with the quality and details before we proceed with
+                                            packing and shipping.
+                                        </p>
+                                        <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1">
+                                            <li><strong>HD Documentation:</strong> Detailed photos of all key areas and
+                                                features.</li>
+                                            <li><strong>Video Call Reviews:</strong> Live video sessions where we can
+                                                manipulate the model
+                                                per
+                                                your instructions.</li>
+                                            <li><strong>Feedback Integration:</strong> Any final minor tweaks can be
+                                                requested and verified
+                                                remotely.</li>
+                                            <li><strong>Efficiency:</strong> Saves you travel time while maintaining
+                                                full control over the
+                                                final
+                                                result.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 10 -->
+                        <div class="border border-gray-200 rounded-2xl overflow-hidden group">
+                            <button
+                                class="faq-btn w-full px-4 py-3 flex justify-between items-center hover:bg-gray-50 transition"
+                                onclick="toggleFAQ(this)">
+                                <span class="font-semibold text-base text-left">Will the scale models reach my
+                                    destination
+                                    safe?</span>
+                                <span
+                                    class="text-2xl text-[#064998] transform transition-transform duration-300">+</span>
+                            </button>
+                            <div class="faq-content hidden px-6 pb-6 border-t border-gray-200 bg-gray-50">
+                                <div class="flex flex-col md:flex-row gap-6 pt-4">
+                                    <div class="w-full md:w-1/3">
+                                        <img src="./assets/FAQ/SCL7.jpeg" alt="Safety & Protection"
+                                            class="rounded-2xl w-full h-48 object-cover shadow-sm" />
+                                    </div>
+                                    <div class="w-full md:w-2/3 flex flex-col gap-3">
+                                        <p class="text-gray-700 text-sm leading-relaxed">
+                                            Safety is our top priority. We have a zero-damage record thanks to our
+                                            meticulous packing
+                                            standards.
+                                            Whether traveling by road, air, or sea, we use industry-grade
+                                            shock-absorbing materials and
+                                            rigid
+                                            external casing. We also include shock sensors (upon request) to monitor
+                                            handling during
+                                            transit,
+                                            giving you complete assurance that your investment is protected every step
+                                            of the way.
+                                        </p>
+                                        <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1">
+                                            <li><strong>Shock Absorption:</strong> Custom-cut foam inserts cradling
+                                                critical components.
+                                            </li>
+                                            <li><strong>Rigid Casing:</strong> Heavy-duty plywood flight cases with
+                                                metal reinforcements.
+                                            </li>
+                                            <li><strong>Secure Fastening:</strong> Internal straps and blocks to prevent
+                                                movement inside the
+                                                crate.</li>
+                                            <li><strong>Handling Instructions:</strong> Clear labeling and "Fragile"
+                                                warnings for logistics
+                                                haldlers.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Get in Touch with Us Section -->
+                <div class="pt-30 md:pt-40 flex flex-col">
+                    <div class="text-center mb-16">
+                        <h2 class="font-bebas text-6xl max-md:text-5xl mb-4">Get in Touch with Us</h2>
+                        <p class="text-gray-700 text-lg">
+                            Reach out to Maadhu Creatives—let us help grow your business.
+                        </p>
+                    </div>
+                    <div class="flex pb-20 gap-8 max-lg:flex-col">
+                        <div class="w-1/2 flex flex-col gap-8 max-lg:w-full">
+                            <form class="flex flex-col gap-6">
+                                <input type="text" placeholder="Your Name"
+                                    class="px-4 py-3 border-b-2 border-gray-300 focus:outline-none focus:border-[#064998]"
+                                    required />
+                                <input type="email" placeholder="Your Email"
+                                    class="px-4 py-3 border-b-2 border-gray-300 focus:outline-none focus:border-[#064998]"
+                                    required />
+
+                                <input type="tel" placeholder="Phone Number"
+                                    class="px-4 py-3 border-b-2 border-gray-300 focus:outline-none focus:border-[#064998]"
+                                    required />
+                                <input type="text" placeholder="Subject"
+                                    class="px-4 py-3 border-b-2 border-gray-300 focus:outline-none focus:border-[#064998]"
+                                    required />
+
+                                <textarea placeholder="Your Message" rows="4"
+                                    class="px-4 py-3 border-b-2 border-gray-300 focus:outline-none focus:border-[#064998] resize-none"
+                                    required></textarea>
+
+                                <div class="grid grid-cols-6 gap-4">
+                                    <p class="whitespace-nowrap mb-0 flex justify-start items-center ">4 + 5 = </p>
+                                    <input type="text" placeholder="Answer"
+                                        class="px-4 py-3 border-b-2 border-gray-300 focus:outline-none focus:border-[#064998] w-full col-span-5"
+                                        required />
+                                </div>
+
+                                <button type="submit"
+                                    class="rounded-full px-8 py-4 bg-[#064998] text-white font-medium w-fit hover:bg-blue-900 transition">
+                                    Send Message
+                                </button>
+                            </form>
+                        </div>
+
+                        <div class="w-1/2 max-lg:w-full">
+                            <div class="w-full h-full rounded-2xl overflow-hidden min-h-[500px]">
+                                <iframe class="max-lg:h-[500px]"
+                                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d482222.825870043!2d72.858239!3d19.222882!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b0d3f9ce03d9%3A0x82503022c7c9a1de!2sMaadhu%20Creatives%20-%203d%20Scale%20Model%20Making%20Company%20-%20Architectural%20Model%20Maker%20-%203d%20Miniature%20%26%20Printing%20Model%20Maker!5e0!3m2!1sen!2sus!4v1766884910671!5m2!1sen!2sus"
+                                    width="100%" height="100%" style="border: 0" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-[#064998] text-white py-12">
+        <div class="max-w-[1280px] px-4 mx-auto">
+            <div class="flex flex-col sm:flex-row justify-start items-start sm:items-center gap-2 mb-8">
+                <a href="#">
+                    <img src="./assets/logo.gif" alt="logo"
+                        class="w-[75px] min-w-[75px] md:w-[90px] h-auto object-cover brightness-[0] invert" /></a>
+                <h3 class="font-bebas text-4xl">
+                    Maadhu Creatives – 3D Scale Model Making Company
+                </h3>
+            </div>
+            <div class="flex flex-wrap flex-col md:flex-row justify-between space-y-8 gap-2">
+                <div class="flex flex-col gap-2 text-sm">
+                    <h4 class="font-bold text-base mb-2">Quick Link</h4>
+                    <p>About Us</p>
+                    <p>Contact us</p>
+                    <p>Career</p>
+                    <p>Blog</p>
+                </div>
+                <div
+                    class="flex flex-col gap-2 text-sm border-t pt-4 md:pt-0 md:border-t-0 md:pb-6 md:border-l border-white/20 md:pl-6 lg:pl-4 xl:pl-8">
+                    <h4 class="font-bold text-base mb-2">More Services</h4>
+                    <p>Acrylic Laser Cutting</p>
+                    <p>Gold & Chrome Plating</p>
+                    <p>Maadhu Flight Case</p>
+                    <p>Maadhu Train Miniatures</p>
+                </div>
+                <div
+                    class="flex flex-col gap-2 text-sm border-t pt-4 md:pt-0 md:border-t-0 md:pb-6 md:border-l border-white/20 md:pl-6 lg:pl-4 xl:pl-8">
+                    <h4 class="font-bold text-base mb-2">3D Scale Model</h4>
+                    <p>Architectural Model Making</p>
+                    <p>Apartment Model Making</p>
+                    <p>Building Model Making</p>
+                    <p>Industrial Model Making</p>
+                    <p>Themepark Model Making</p>
+                    <p>Piping Model Making</p>
+                    <p>Block Model Making</p>
+                    <p>Architectural Interior Model</p>
+                    <p>Architectural Exterior Model</p>
+                    <p>Engineering Model Making</p>
+                    <p>Miniature Model</p>
+                    <p>Marine Model Making</p>
+                    <p>Layout Model Making</p>
+                    <p>Master Plan Model Making</p>
+                </div>
+                <div
+                    class="flex flex-col gap-2 text-sm border-t md:border-t-0 pt-4 md:pt-0 md:pb-6 md:border-l border-white/20 md:pl-6 lg:pl-4 xl:pl-8">
+                    <h4 class="font-bold text-base mb-2">3D Printing</h4>
+                    <p>FDM 3D Printing</p>
+                    <p>SLA 3D Printing</p>
+                    <p>DLp 3D Printing</p>
+                </div>
+
+                <div
+                    class="flex flex-col gap-2 text-sm border-t md:border-t-0 pt-4 md:pt-0 md:pb-6 md:border-l border-white/20 md:pl-6 lg:pl-4 xl:pl-8">
+                    <h4 class="font-bold text-base mb-2">
+                        3D Architectural Visualization
+                    </h4>
+                    <p>Architecture 3D Walkthrough</p>
+                    <p>3D Architectural Interior Rendering</p>
+                    <p>3D Architectural Exterior Rendering</p>
+                    <p>3D Interior Rendering</p>
+                    <p>3D Exterior Rendering</p>
+                    <p>3D Floor Plan</p>
+                    <p>3D Cut Section Rendering</p>
+                </div>
+            </div>
+            <div
+                class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6  lg:gap-8 mt-12 lg:pt-12 lg:border-t lg:border-white/20">
+                <div
+                    class="flex flex-col gap-6 border-t lg:border-t-0 pt-4 lg:pt-0 pb-6 lg:border-r border-white/20 pr-8">
+                    <h4 class="font-bold text-lg">India</h4>
+                    <div class="flex flex-col gap-4 text-sm">
+                        <div class="flex items-start gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="mt-1">
+                                <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
+                                <rect x="2" y="4" width="20" height="16" rx="2" />
+                            </svg>
+                            <div>
+                                <p class="font-semibold mb-1">Email</p>
+                                <a href="mailto:marketing@maadhucreatives.com"
+                                    class="hover:underline word-wrap: break-word">marketing@maadhucreatives.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="mt-1">
+                                <path
+                                    d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
+                            </svg>
+                            <div>
+                                <p class="font-semibold mb-1">Phone</p>
+                                <a href="tel:+919876543210" class="hover:underline">+91 90289 58299</a>,
+                                <a href="tel:+91 96648 83746" class="hover:underline">+91 96648 83746</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="mt-1 min-w-5">
+                                <path
+                                    d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            <div>
+                                <p class="font-semibold mb-1">Address</p>
+                                <p class="font-bold mb-1">
+                                    Maadhu Creatives Productions LLP</p>
+                                <p>Block No.2, Nagarwal
+                                    Compound, Kasthurba Cross Rd Number 1, opp. Jain Upashray,
+                                    Borivali East, Mumbai, Maharashtra 400066
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="flex flex-col gap-6 border-t lg:border-t-0 pt-4 lg:pt-0 pb-6 lg:border-r border-white/20 pr-8">
+                    <h4 class="font-bold text-lg">UAE</h4>
+                    <div class="flex flex-col gap-4 text-sm">
+                        <div class="flex items-start gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="mt-1">
+                                <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
+                                <rect x="2" y="4" width="20" height="16" rx="2" />
+                            </svg>
+                            <div>
+                                <p class="font-semibold mb-1">Email</p>
+                                <a href="mailto:info@maadhucreatives.com"
+                                    class="hover:underline">info@maadhucreatives.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="mt-1">
+                                <path
+                                    d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
+                            </svg>
+                            <div>
+                                <p class="font-semibold mb-1">Phone</p>
+                                <a href="tel:+971 55 803 7946" class="hover:underline">+971 55 803 7946</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="mt-1 min-w-5">
+                                <path
+                                    d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            <div>
+                                <p class="font-semibold mb-1">Address</p>
+                                <p class="font-bold mb-1">Maadhu Creatives - Architectural Model Makers in Dubai</p>
+                                <p>UAE Office No. 405, Royal Class (DIP Branch), Dubai Investment Park 1 - Dubai -
+                                    United Arab Emirates
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-6 max-lg:border-t max-lg:pt-4 max-lg:border-white/20">
+                    <h4 class="font-bold text-lg">Get in Touch for Careers</h4>
+                    <div class="flex flex-col gap-4 text-sm">
+                        <div class="flex items-start gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="mt-1">
+                                <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
+                                <rect x="2" y="4" width="20" height="16" rx="2" />
+                            </svg>
+                            <div>
+                                <p class="font-semibold mb-1">Email</p>
+                                <a href="mailto:info@maadhucreatives.com"
+                                    class="hover:underline">info@maadhucreatives.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="mt-1">
+                                <path
+                                    d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
+                            </svg>
+                            <div>
+                                <p class="font-semibold mb-1">Phone</p>
+                                <a href="tel:+919028958299" class="hover:underline">+91 90289 58299</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-map-pin-icon lucide-map-pin">
+                                <path
+                                    d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            <div>
+                                <p class="font-semibold mb-1">Address</p>
+                                <p>India, UAE</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-wrap items-center justify-center gap-8 mt-12 pt-12 border-t border-white/20 mx-auto">
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="https://www.whatsapp.com" target="_blank" class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-whatsapp" viewBox="0 0 16 16">
+                            <path
+                                d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
+                        </svg>
+                        <span class="ml-2 text-sm">WhatsApp</span>
+                    </a>
+                    <a href="https://www.facebook.com" target="_blank" class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-facebook-icon lucide-facebook">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                        </svg>
+                        <span class="ml-2 text-sm">Facebook</span>
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank" class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-instagram-icon lucide-instagram">
+                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                        </svg>
+                        <span class="ml-2 text-sm">Instagram</span>
+                    </a>
+                    <a href="https://www.linkedin.com" target="_blank" class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-linkedin-icon lucide-linkedin">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                            <rect width="4" height="12" x="2" y="9" />
+                            <circle cx="4" cy="4" r="2" />
+                        </svg>
+                        <span class="ml-2 text-sm">LinkedIn</span>
+                    </a>
+                    <a href="https://www.twitter.com" target="_blank" class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-twitter-icon lucide-twitter">
+                            <path
+                                d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+                        </svg>
+                        <span class="ml-2 text-sm">Twitter</span>
+                    </a>
+                    <a href="https://www.tumblr.com" target="_blank" class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision"
+                            text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd"
+                            clip-rule="evenodd" viewBox="0 0 289.999 512.184">
+                            <path fill="#252422" fill-rule="nonzero"
+                                d="M204.435 512.184c-77.02 0-134.427-39.629-134.427-134.438V225.914H0V143.7C77.048 123.699 109.26 57.408 112.983 0h79.974v130.361h93.314v95.553h-93.314v132.21c0 39.629 19.995 53.323 51.852 53.323h45.19v100.737h-85.564z" />
+                        </svg>
+                        <span class="ml-2 text-sm">Tumblr</span>
+                    </a>
+                    <a href="https://www.pinterest.com" target="_blank" class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-pinterest" viewBox="0 0 16 16">
+                            <path
+                                d="M8 0a8 8 0 0 0-2.915 15.452c-.07-.633-.134-1.606.027-2.297.146-.625.938-3.977.938-3.977s-.239-.479-.239-1.187c0-1.113.645-1.943 1.448-1.943.682 0 1.012.512 1.012 1.127 0 .686-.437 1.712-.663 2.663-.188.796.4 1.446 1.185 1.446 1.422 0 2.515-1.5 2.515-3.664 0-1.915-1.377-3.254-3.342-3.254-2.276 0-3.612 1.707-3.612 3.471 0 .688.265 1.425.595 1.826a.24.24 0 0 1 .056.23c-.061.252-.196.796-.222.907-.035.146-.116.177-.268.107-1-.465-1.624-1.926-1.624-3.1 0-2.523 1.834-4.84 5.286-4.84 2.775 0 4.932 1.977 4.932 4.62 0 2.757-1.739 4.976-4.151 4.976-.811 0-1.573-.421-1.834-.919l-.498 1.902c-.181.695-.669 1.566-.995 2.097A8 8 0 1 0 8 0" />
+                        </svg>
+                        <span class="ml-2 text-sm">Pinterest</span>
+                    </a>
+                    <a href="https://www.youtube.com" target="_blank" class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-youtube-icon lucide-youtube">
+                            <path
+                                d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+                            <path d="m10 15 5-3-5-3z" />
+                        </svg>
+                        <span class="ml-2 text-sm">YouTube</span>
+                    </a>
+                    <a href="https://www.behance.net" target="_blank" class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-behance" viewBox="0 0 16 16">
+                            <path
+                                d="M4.654 3c.461 0 .887.035 1.278.14.39.07.711.216.996.391s.497.426.641.747c.14.32.216.711.216 1.137 0 .496-.106.922-.356 1.242-.215.32-.566.606-.997.817.606.176 1.067.496 1.348.922s.461.957.461 1.563c0 .496-.105.922-.285 1.278a2.3 2.3 0 0 1-.782.887c-.32.215-.711.39-1.137.496a5.3 5.3 0 0 1-1.278.176L0 12.803V3zm-.285 3.978c.39 0 .71-.105.957-.285.246-.18.355-.497.355-.887 0-.216-.035-.426-.105-.567a1 1 0 0 0-.32-.355 1.8 1.8 0 0 0-.461-.176c-.176-.035-.356-.035-.567-.035H2.17v2.31c0-.005 2.2-.005 2.2-.005zm.105 4.193c.215 0 .426-.035.606-.07.176-.035.356-.106.496-.216s.25-.215.356-.39c.07-.176.14-.391.14-.641 0-.496-.14-.852-.426-1.102-.285-.215-.676-.32-1.137-.32H2.17v2.734h2.305zm6.858-.035q.428.427 1.278.426c.39 0 .746-.106 1.032-.286q.426-.32.53-.64h1.74c-.286.851-.712 1.457-1.278 1.848-.566.355-1.243.566-2.06.566a4.1 4.1 0 0 1-1.527-.285 2.8 2.8 0 0 1-1.137-.782 2.85 2.85 0 0 1-.712-1.172c-.175-.461-.25-.957-.25-1.528 0-.531.07-1.032.25-1.493.18-.46.426-.852.747-1.207.32-.32.711-.606 1.137-.782a4 4 0 0 1 1.493-.285c.606 0 1.137.105 1.598.355.46.25.817.532 1.102.958.285.39.496.851.641 1.348.07.496.105.996.07 1.563h-5.15c0 .58.21 1.11.496 1.396m2.24-3.732c-.25-.25-.642-.391-1.103-.391-.32 0-.566.07-.781.176s-.356.25-.496.39a.96.96 0 0 0-.25.497c-.036.175-.07.32-.07.46h3.196c-.07-.526-.25-.882-.497-1.132zm-3.127-3.728h3.978v.957h-3.978z" />
+                        </svg>
+                        <span class="ml-2 text-sm">Behance</span>
+                    </a>
+                </div>
+            </div>
+            <div class="gap-8 mt-12 pt-12 border-t border-white/20 mx-auto text-center text-sm mx-auto items-center">
+                © 2026 Maadhu Creatives Productions LLP. All rights reserved.
+            </div>
+        </div>
+
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <!-- Image Model -->
+    <div id="imageModal"
+        class="fixed inset-0 z-[100] hidden bg-black/90 flex items-center justify-center p-4 transition-opacity"
+        onclick="closeModal(event)">
+
+        <!-- Close Button -->
+        <button
+            class="absolute top-5 right-8 text-white text-4xl font-light hover:text-gray-300 focus:outline-none z-[120]"
+            onclick="closeModal(event, true)">&times;</button>
+
+        <!-- Navigation Buttons -->
+        <button
+            class="absolute left-4 md:left-8 top-1/2 transform -translate-y-1/2 text-white text-6xl hover:text-gray-300 focus:outline-none z-[110] hidden md:block"
+            onclick="changeImage(-1, event)">&#8249;</button>
+
+        <button
+            class="absolute right-4 md:right-8 top-1/2 transform -translate-y-1/2 text-white text-6xl hover:text-gray-300 focus:outline-none z-[110] hidden md:block"
+            onclick="changeImage(1, event)">&#8250;</button>
+
+        <div class="relative w-full max-w-5xl flex flex-col items-center" onclick="event.stopPropagation()">
+            <img id="modalImage" src="" class="max-h-[85vh] w-auto object-contain rounded-lg shadow-2xl"
+                alt="Full View">
+            <p id="modalCaption" class="text-white text-center mt-4 text-xl font-bebas tracking-wider"></p>
+
+            <!-- Mobile Navigation (Bottom) -->
+            <div class="flex justify-between w-full md:hidden mt-4 px-4">
+                <button class="text-white text-4xl px-4 py-2" onclick="changeImage(-1, event)">&#8249;</button>
+                <button class="text-white text-4xl px-4 py-2" onclick="changeImage(1, event)">&#8250;</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentImageIndex = 0;
+        let galleryImages = [];
+
+        function initGallery() {
+            // Select all images inside the gallery grid cards
+            galleryImages = Array.from(document.querySelectorAll('#gallery-grid .group img'));
+        }
+
+        function openModal(element) {
+            initGallery(); // Ensure we have the latest list
+            const img = element.querySelector('img');
+            currentImageIndex = galleryImages.indexOf(img);
+
+            updateModalContent();
+
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+
+            // Add keyboard event listener
+            document.addEventListener('keydown', handleKeyPress);
+        }
+
+        function closeModal(event, force = false) {
+            if (force || event.target.id === 'imageModal') {
+                document.getElementById('imageModal').classList.add('hidden');
+                document.body.style.overflow = '';
+                document.removeEventListener('keydown', handleKeyPress);
+            }
+        }
+
+        function changeImage(direction, event) {
+            if (event) event.stopPropagation();
+
+            currentImageIndex += direction;
+
+            // Circular navigation
+            if (currentImageIndex >= galleryImages.length) {
+                currentImageIndex = 0;
+            } else if (currentImageIndex < 0) {
+                currentImageIndex = galleryImages.length - 1;
+            }
+
+            updateModalContent();
+        }
+
+        function updateModalContent() {
+            const modalImg = document.getElementById('modalImage');
+            const modalCaption = document.getElementById('modalCaption');
+            const currentImg = galleryImages[currentImageIndex];
+
+            if (currentImg) {
+                modalImg.src = currentImg.src;
+                modalCaption.innerText = currentImg.alt;
+            }
+        }
+
+        function handleKeyPress(event) {
+            if (document.getElementById('imageModal').classList.contains('hidden')) return;
+
+            if (event.key === 'ArrowLeft') {
+                changeImage(-1);
+            } else if (event.key === 'ArrowRight') {
+                changeImage(1);
+            } else if (event.key === 'Escape') {
+                closeModal(event, true);
+            }
+        }
+    </script>
+
+    <script>
+        function toggleFAQ(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('span:last-child');
+            const isOpen = !content.classList.contains('hidden');
+
+            // Close all other FAQs
+            document.querySelectorAll('.faq-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.faq-btn span:last-child').forEach(el => el.classList.remove('rotate-45'));
+
+            if (!isOpen) {
+                content.classList.remove('hidden');
+                icon.classList.add('rotate-45');
+            }
+        }
+    </script>
+</body>
+
+</html>

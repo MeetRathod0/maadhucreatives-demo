@@ -114,9 +114,25 @@ setInterval(scrollClient, 3000);
 setInterval(scrollCity, 3000);
 
 // FAQ Toggle Function
+// FAQ Toggle Function
 function toggleFAQ(button) {
     const content = button.nextElementSibling;
-    content.classList.toggle("hidden");
+    const icon = button.querySelector('span:last-child');
+    const isOpen = !content.classList.contains('hidden');
+
+    // Close all other FAQs
+    document.querySelectorAll('.faq-content').forEach(el => el.classList.add('hidden'));
+    document.querySelectorAll('.faq-btn span:last-child').forEach(el => {
+        el.classList.remove('rotate-45');
+        el.textContent = '+'; // Reset icon text if needed, though rotation handles visual
+    });
+
+    if (!isOpen) {
+        content.classList.remove('hidden');
+        icon.classList.add('rotate-45');
+    } else {
+        icon.classList.remove('rotate-45');
+    }
 }
 
 
