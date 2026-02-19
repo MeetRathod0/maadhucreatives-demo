@@ -13,6 +13,24 @@
     <!-- FontAwesome bundled with AdminLTE -->
     <link rel="stylesheet" href="{{ asset('assets/vendor/adminlte/plugins/fontawesome-free/css/all.min.css') }}">
 
+    <style>
+        .card {
+            border-radius: 12px !important;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05) !important;
+        }
+        .card-body {
+            padding: 16px !important;
+        }
+        .small-box {
+            border-radius: 12px !important;
+            overflow: hidden;
+        }
+        .small-box-footer {
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+        }
+    </style>
     @stack('styles')
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
